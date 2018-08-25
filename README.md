@@ -5,14 +5,11 @@ I'm all about setting it and forgetting it and hopefully this script helps you d
 
 - ```pfsensebackup.ps1``` A simple Powershell script that uses [pfSenseBackup](https://github.com/KoenZomers/pfSenseBackup) to create the backup. It has some error checking, logs everything it does, auto-deletes old backups after 'x' days and has the ability to alert using Pushover in case of an error using [copypastedevelopers](https://github.com/copypastedeveloper/PushoverCli) pushover CLI. 
 
-See a list of To Do's on the wiki page here https://github.com/badbread/breadsMCstuff/wiki.
-
 ### Prerequisites
 
 This script requires following:
 - [KoenZomers pfSenseBackup](https://github.com/KoenZomers/pfSenseBackup)
 - [copypastedevelopers pushoverCLI](https://github.com/copypastedeveloper/PushoverCli) (Only if you want to use pushover notifications)
-
 
 ### Mandatory variables to set
 1. $backupdir = "\" #where your backup files will go (leave a trailing \)
