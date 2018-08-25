@@ -27,10 +27,10 @@ This script requires following:
 - [ ] Add a "check variables" statement before the script executes anything... (should stop some bugs)
 - [ ] Remove pushover dependency
 - [ ] Add option to toggle logging on or off
-- [ ] Add ability to keep a minimum number of backup files (in case something goes horribly wrong, don't want the script deleting old files as they age)
+- [x] Add ability to keep a minimum number of backup files (in case something goes horribly wrong, don't want the script deleting old files as they age)
 
 ## Screenshots
-coming
+![pushover](https://github.com/badbread/breadsPFsenseAutoBackup/blob/master/logshot.png?raw=true)
 
 ## Built With
 * Powershell
