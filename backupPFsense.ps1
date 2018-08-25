@@ -8,6 +8,7 @@ $retention = "-30" #how many days to keep old backup files (Must be negative val
 $fileName = "pfsensebackup" #name of your log file (put into your $backupdir)
 $usepush = "n" #use pushover? (y or n)
 $pushoverapp = "c:\somepath\pushovercli.exe" #location of the pushovercli
+$minbackups = "5" #minimum number of backups to keep
 
 #Should not need to be modified
 $logFileName = $fileName + ".log"
@@ -45,10 +46,17 @@ function create_backup {
 }
 
 function deloldbackups {
-	write-log -text "Attempting to delete old backups..." -type INFO;
-	get-childitem -Path $backupdir -recurse | where-object { !$_.PSIsContainer -and $_.lastwritetime -lt $HowOld } | remove-item -force
-	write-log -text "Backups older than $HowOld days deleted." -type INFO;
-	alldone;
+	$backupcount = ( Get-ChildItem $backupdir | Measure-Object ).Count
+	if ($backupcount -gt $minbackups) {
+			write-log -text "Attempting to delete old backups..." -type INFO;
+			get-childitem -Path $backupdir -recurse | where-object { !$_.PSIsContainer -and $_.lastwritetime -lt $HowOld } | remove-item -force
+			write-log -text "Backups older than $HowOld days deleted." -type INFO;
+			alldone;
+		          }
+	else {
+		write-log -text "There are not at least $minbackups backup files, not deleting anything..." -type WARNING;
+		alldone;
+		}
 }
 
 function alldone {
