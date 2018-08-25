@@ -46,7 +46,7 @@ function create_backup {
 }
 
 function deloldbackups {
-	$backupcount = ( Get-ChildItem $backupdir | Measure-Object ).Count
+	$backupcount = ( Get-ChildItem $backupdir -filter *.xml | Measure-Object ).Count
 	if ($backupcount -gt $minbackups) {
 			write-log -text "Attempting to delete old backups..." -type INFO;
 			get-childitem -Path $backupdir -recurse | where-object { !$_.PSIsContainer -and $_.lastwritetime -lt $HowOld } | remove-item -force
@@ -66,16 +66,16 @@ function alldone {
 }
 
 function sendpush($message) {
-  if ($usepush = "y") {
-  write-log -text "Push notification sent" -type INFO;
-  $message = $message.ForEach({ "PFSense BACKUP - " + $message})
-  & $pushoverapp message="$message";
-  exit
-}
-  else {
-  write-log -text "Push not used or variable incorrect"
-  exit
-  }
+	if ($usepush = "y") {
+		write-log -text "Push notification sent" -type INFO;
+		$message = $message.ForEach({ "PFSense BACKUP - " + $message})
+		& $pushoverapp message="$message";
+		exit
+	}
+  	else {
+  		write-log -text "Push not used or variable incorrect"
+  		exit
+  	}
 }
 
 Add-Content -Path $log -Value "--------------------------------------------------------------------"
