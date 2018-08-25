@@ -21,12 +21,14 @@ This script requires following:
 7. $fileName = "pfsensebackup" #name of your log file (put into your $backupdir)
 8. $usepush = "y" #use pushover? (y or n)
 9. $pushoverapp = "c:\somepath\pushovercli.exe" #location of the pushovercli
+10. $minbackups = "5" #minimum number of backup files before files are auto-deleted
 
 ## TODO
 ```backupPFsense.ps1```
 - [ ] Add a "check variables" statement before the script executes anything... (should stop some bugs)
 - [ ] Remove pushover dependency
 - [ ] Add option to toggle logging on or off
+- [ ] Add a linux version
 - [x] Add ability to keep a minimum number of backup files (in case something goes horribly wrong, don't want the script deleting old files as they age)
 
 ## Screenshots
