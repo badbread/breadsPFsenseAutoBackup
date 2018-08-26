@@ -33,7 +33,7 @@ This script requires following:
 ## TODO
 ```backupPFsense.ps1```
 - [ ] Add a "check variables" statement before the script executes anything... (should stop some bugs)
-- [ ] Remove pushover dependency
+- [x] Remove pushover dependency
 - [ ] Add option to toggle logging on or off
 - [ ] Add a linux version
 - [x] Add ability to keep a minimum number of backup files (in case something goes horribly wrong, don't want the script deleting old files as they age)
