@@ -48,6 +48,6 @@ This script requires following:
 * **badbread** - *Initial work* - [badbread](https://github.com/badbread)
 
 ## Acknowledgments
-[KoenZomers pfSenseBackup](https://github.com/KoenZomers/pfSenseBackup)
-[copypastedevelopers pushoverCLI](https://github.com/copypastedeveloper/PushoverCli)
+- [KoenZomers pfSenseBackup](https://github.com/KoenZomers/pfSenseBackup)
+- [copypastedevelopers pushoverCLI](https://github.com/copypastedeveloper/PushoverCli)
 
