@@ -39,7 +39,8 @@ This script requires following:
 - [x] Add ability to keep a minimum number of backup files (in case something goes horribly wrong, don't want the script deleting old files as they age)
 
 ## Screenshots
-![pushover](https://github.com/badbread/breadsPFsenseAutoBackup/blob/master/logshot.png?raw=true)
+- ![logshot](logshot.png)
+- ![pushfail](pfpushfailed.jpg)
 
 ## Built With
 * Powershell
