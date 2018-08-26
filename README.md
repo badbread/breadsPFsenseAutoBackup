@@ -18,8 +18,8 @@ This script requires following:
 - [copypastedevelopers pushoverCLI](https://github.com/copypastedeveloper/PushoverCli) (Only if you want to use pushover notifications)
 
 ### Mandatory variables to set
-1. $backupdir = "\" #where your backup files will go (leave a trailing \)
-2. $appdir = "\" #where the exe lives (leave a trailing \)
+1. $backupdir = "\" #where your backup files will go (leave a trailing backslash)
+2. $appdir = "\" #where the exe lives (leave a trailing backslash)
 3. $username = "" #PFSense Username
 4. $pw = "" #PFSense Password
 5. $pfaddress = "192.168.x.x" #PFSense address
