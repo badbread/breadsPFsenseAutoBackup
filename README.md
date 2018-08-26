@@ -1,10 +1,15 @@
 # breadsPFsenseAutoBackup
 
-A script utilizing [KoenZomers pfSenseBackup](https://github.com/KoenZomers/pfSenseBackup) exe to automate PFSense backups. 
-I'm all about setting it and forgetting it and hopefully this script helps you do that. It's currently setup to only alert if there is a failure.
+- ```pfsensebackup.ps1``` A script utilizing [KoenZomers pfSenseBackup](https://github.com/KoenZomers/pfSenseBackup) exe to automate PFSense backups. 
+I'm all about setting it and forgetting it and hopefully this script helps you do that. 
 
-- ```pfsensebackup.ps1``` A simple Powershell script that uses [pfSenseBackup](https://github.com/KoenZomers/pfSenseBackup) to create the backup. It has some error checking, logs everything it does, auto-deletes old backups after 'x' days and has the ability to alert using Pushover in case of an error using [copypastedevelopers](https://github.com/copypastedeveloper/PushoverCli) pushover CLI. 
-
+### Features
+- Logs everything it does
+- Pushover alerts using [copypastedevelopers](https://github.com/copypastedeveloper/PushoverCli) pushover CLI. 
+   - Can be toggled on or off, and can choose between alerting always or only on a failure
+- Auto-deletes old backups after 'x' days
+   - Only auto-deletes if 'x' number of backup files exist
+   
 ### Prerequisites
 
 This script requires following:
