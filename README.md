@@ -8,6 +8,7 @@ I'm all about setting it and forgetting it and hopefully this script helps you d
 ### Prerequisites
 
 This script requires following:
+- A windows machine
 - [KoenZomers pfSenseBackup](https://github.com/KoenZomers/pfSenseBackup)
 - [copypastedevelopers pushoverCLI](https://github.com/copypastedeveloper/PushoverCli) (Only if you want to use pushover notifications)
 
@@ -22,6 +23,12 @@ This script requires following:
 8. $usepush = "y" #use pushover? (y or n)
 9. $pushoverapp = "c:\somepath\pushovercli.exe" #location of the pushovercli
 10. $minbackups = "5" #minimum number of backup files before files are auto-deleted
+
+## Instructions
+1. Open the pfSenseBackup.ps1 script and edit all the variables above
+2. Create a new scheduled task in Windows with the following:
+   - General Tab "Run whether a user is logged in or not" selected -> Action "Start a program" -> Program/Script "Powershell" -> Add Arugments "-f c:\pathtoyourscript\script.ps1"
+
 
 ## TODO
 ```backupPFsense.ps1```
