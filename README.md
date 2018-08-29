@@ -1,6 +1,8 @@
 # breadsPFsenseAutoBackup
 
 - ```pfsensebackup.ps1``` A script utilizing [KoenZomers pfSenseBackup](https://github.com/KoenZomers/pfSenseBackup) exe to automate PFSense backups. 
+- ```pfsensebackupv2.ps1``` Completely re-written script which automates the variable input process, way less BASH like where all variables are set on first run of the script and stored in an xml file
+
 I'm all about setting it and forgetting it and hopefully this script helps you do that. 
 
 ### Features
