@@ -6,20 +6,33 @@
 I'm all about setting it and forgetting it and hopefully this script helps you do that. 
 
 ### Features
+
+```pfsensebackup.ps1```
 - Logs everything it does
 - Pushover alerts using [copypastedevelopers](https://github.com/copypastedeveloper/PushoverCli) pushover CLI. 
    - Can be toggled on or off, and can choose between alerting always or only on a failure
 - Auto-deletes old backups after 'x' days
    - Only auto-deletes if 'x' number of backup files exist
+
+```pfsensebackupv2.ps1```
+- Does everything above
+- On first run prompts for all the variables and stores them in an XML file in the scripts location
+- Uses [Kieranties PS-Pushover](https://github.com/Kieranties/PS-Pushover) for pushover notifications
    
 ### Prerequisites
 
-This script requires following:
+Both scripts requires following:
 - A windows machine
 - [KoenZomers pfSenseBackup](https://github.com/KoenZomers/pfSenseBackup)
+
+- ```pfsensebackup.ps1```
 - [copypastedevelopers pushoverCLI](https://github.com/copypastedeveloper/PushoverCli) (Only if you want to use pushover notifications)
 
+- ```pfsensebackupv2.ps1```
+- Uses [Kieranties PS-Pushover](https://github.com/Kieranties/PS-Pushover) for pushover notifications
+
 ### Mandatory variables to set
+```pfsensebackup.ps1```
 1. $backupdir = "\" #where your backup files will go (leave a trailing backslash)
 2. $appdir = "\" #where the exe lives (leave a trailing backslash)
 3. $username = "" #PFSense Username
@@ -31,11 +44,21 @@ This script requires following:
 9. $pushoverapp = "c:\somepath\pushovercli.exe" #location of the pushovercli
 10. $minbackups = "5" #minimum number of backup files before files are auto-deleted
 
+
+```pfsensebackup2.ps1```
+- None, automatic
+
 ## Instructions
+```pfsensebackup.ps1```
 1. Open the pfSenseBackup.ps1 script and edit all the variables above
 2. Create a new scheduled task in Windows with the following:
-   - General Tab "Run whether a user is logged in or not" selected -> Action "Start a program" -> Program/Script "Powershell" -> Add Arugments "-f c:\pathtoyourscript\script.ps1"
+   - General Tab "Run whether a user is logged in or not" selected -> Action "Start a program" -> Program/Script "Powershell" -> Add Arguments "-f c:\pathtoyourscript\pfsensebackup.ps1"
 
+```pfsensebackupv2.ps1```
+1. Place the pfsensebackupv2.ps1 script and [Kieranties PS-Pushover](https://github.com/Kieranties/PS-Pushover) in the same directory
+2. The script should create "autobackupconfig.xml" file in the same dir
+3. Create a new scheduled task in Windows with the following:
+   - General Tab "Run whether a user is logged in or not" selected -> Action "Start a program" -> Program/Script "Powershell" -> Add Arguments "-f c:\pathtoyourscript\pfsensebackupv2.ps1"
 
 ## TODO
 ```backupPFsense.ps1```
@@ -58,4 +81,4 @@ This script requires following:
 ## Acknowledgments
 - [KoenZomers pfSenseBackup](https://github.com/KoenZomers/pfSenseBackup)
 - [copypastedevelopers pushoverCLI](https://github.com/copypastedeveloper/PushoverCli)
-
+- [Kieranties PS-Pushover](https://github.com/Kieranties/PS-Pushover)
