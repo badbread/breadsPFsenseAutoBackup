@@ -22,13 +22,14 @@ I'm all about setting it and forgetting it and hopefully this script helps you d
 ### Prerequisites
 
 Both scripts requires following:
+
 - A windows machine
 - [KoenZomers pfSenseBackup](https://github.com/KoenZomers/pfSenseBackup)
 
-- ```pfsensebackup.ps1```
+ ```pfsensebackup.ps1```
 - [copypastedevelopers pushoverCLI](https://github.com/copypastedeveloper/PushoverCli) (Only if you want to use pushover notifications)
 
-- ```pfsensebackupv2.ps1```
+ ```pfsensebackupv2.ps1```
 - Uses [Kieranties PS-Pushover](https://github.com/Kieranties/PS-Pushover) for pushover notifications
 
 ### Mandatory variables to set
